@@ -42,7 +42,9 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      (chinese :variables
               chinese-use-fcitx5 t
-              chinese-enable-fcitx t)
+              chinese-enable-fcitx t
+              :packages
+              (not pangu-spacing))
      emacs-lisp
      ;; git
      helm
