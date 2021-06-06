@@ -244,7 +244,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("JetBrains Mono"
-                               :size 14.0
+                               :size 14
                                :weight normal
                                :width normal)
 
@@ -541,7 +541,9 @@ dump.")
 This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
-before packages are loaded.")
+before packages are loaded."
+  (spacemacs//set-monospaced-font "JetBrains Mono" "WenQuanYi Micro Hei Mono" 14 16)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
