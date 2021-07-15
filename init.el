@@ -173,6 +173,7 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style '(hybrid :variables
+                                       hybrid-style-remap-Y-to-y$ t
                                        hybrid-style-enable-hjkl-bindings t)
 
    ;; If non-nil show the version string in the Spacemacs buffer. It will
