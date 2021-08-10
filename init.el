@@ -214,7 +214,8 @@ It should only modify the values of Spacemacs settings."
    ;; (default 'vim)
    dotspacemacs-editing-style '(hybrid :variables
                                        hybrid-style-remap-Y-to-y$ t
-                                       hybrid-style-enable-hjkl-bindings t)
+                                       hybrid-style-enable-hjkl-bindings t
+                                       hybrid-style-use-evil-search-module t)
 
    ;; If non-nil show the version string in the Spacemacs buffer. It will
    ;; appear as (spacemacs version)@(emacs version)
