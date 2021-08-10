@@ -95,7 +95,8 @@ This function should only modify configuration layer settings."
           lsp-log-io nil)
      markdown
      multiple-cursors
-     org
+     (org :variables
+          org-image-actual-width 500)
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
