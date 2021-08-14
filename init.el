@@ -61,10 +61,14 @@ This function should only modify configuration layer settings."
      ;; git
      helm
      html
-     javascript
+     (javascript :variables
+                 js2-basic-offset 2
+                 js-indent-level 2
+                 )
      (typescript :variables
                  typescript-linter 'eslint
-                 typescript-fmt-tool 'typescript-formatter)
+                 typescript-indent-level 2
+                 )
      (lsp :variables
           ;; Formatting and indentation - use Cider instead
           lsp-enable-on-type-formatting t
