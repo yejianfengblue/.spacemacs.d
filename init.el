@@ -69,6 +69,8 @@ This function should only modify configuration layer settings."
                  typescript-linter 'eslint
                  typescript-indent-level 2
                  )
+     (vue :variables
+          vue-backend 'lsp)
      (lsp :variables
           ;; Formatting and indentation - use Cider instead
           lsp-enable-on-type-formatting t
@@ -608,6 +610,13 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (spacemacs//set-monospaced-font "JetBrains Mono" "WenQuanYi Micro Hei Mono" 14 16)
+  (setq-default
+   ;; web-mode
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2
+   )
   )
 
 
