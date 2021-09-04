@@ -60,7 +60,13 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;; git
      helm
-     html
+     (html :variables
+           web-fmt-tool 'web-beautify
+           css-enable-lsp t
+           less-enable-lsp t
+           scss-enable-lsp t
+           html-enable-lsp t)
+     web-beautify
      (javascript :variables
                  js2-basic-offset 2
                  js-indent-level 2
