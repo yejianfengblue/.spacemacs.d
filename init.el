@@ -61,12 +61,12 @@ This function should only modify configuration layer settings."
      ;; git
      helm
      (html :variables
-           web-fmt-tool 'web-beautify
+           web-fmt-tool 'prettier
            css-enable-lsp t
            less-enable-lsp t
            scss-enable-lsp t
            html-enable-lsp t)
-     web-beautify
+     prettier
      (javascript :variables
                  js2-basic-offset 2
                  js-indent-level 2
