@@ -89,6 +89,8 @@ This function should only modify configuration layer settings."
           lsp-modeline-diagnostics-enable t
           ;; lsp-modeline-diagnostics-scope :workspace
 
+          lsp-restart 'auto-restart
+
           ;; popup documentation boxes
           ;; lsp-ui-doc-enable nil          ;; disable all doc popups
           lsp-ui-doc-show-with-cursor nil   ;; doc popup for cursor
