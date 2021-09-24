@@ -67,6 +67,8 @@ This function should only modify configuration layer settings."
                  js2-basic-offset 2
                  js-indent-level 2
                  )
+     (json :variables
+           json-fmt-tool 'prettier)
      (typescript :variables
                  typescript-linter 'eslint
                  typescript-fmt-tool 'prettier
