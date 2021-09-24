@@ -94,7 +94,7 @@ This function should only modify configuration layer settings."
           lsp-restart 'auto-restart
 
           ;; popup documentation boxes
-          ;; lsp-ui-doc-enable nil          ;; disable all doc popups
+          lsp-ui-doc-enable nil          ;; disable all doc popups
           lsp-ui-doc-show-with-cursor nil   ;; doc popup for cursor
           ;; lsp-ui-doc-show-with-mouse t   ;; doc popup for mouse
           ;; lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
