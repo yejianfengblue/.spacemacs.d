@@ -625,6 +625,8 @@ before packages are loaded."
    web-mode-css-indent-offset 2
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
+   ;; do not conflict with smartparens when type '{{ ' in .vue file
+   web-mode-enable-auto-pairing nil
    )
   )
 
