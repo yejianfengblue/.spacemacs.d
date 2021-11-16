@@ -115,8 +115,8 @@ This function should only modify configuration layer settings."
           lsp-restart 'auto-restart
 
           ;; popup documentation boxes
-          lsp-ui-doc-enable nil          ;; disable all doc popups
-          lsp-ui-doc-show-with-cursor nil   ;; doc popup for cursor
+          lsp-ui-doc-enable t          ;; disable all doc popups
+          lsp-ui-doc-show-with-cursor t   ;; doc popup for cursor
           ;; lsp-ui-doc-show-with-mouse t   ;; doc popup for mouse
           ;; lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
           lsp-ui-doc-include-signature t    ;; include function signature
@@ -124,7 +124,7 @@ This function should only modify configuration layer settings."
           lsp-ui-doc-alignment 'window      ;; frame window
 
           ;; code actions and diagnostics text as right-hand side of buffer
-          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-enable t
           lsp-ui-sideline-show-code-actions nil
           ;; lsp-ui-sideline-delay 500
 
