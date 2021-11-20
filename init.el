@@ -651,11 +651,23 @@ before packages are loaded."
    ;; do not conflict with smartparens when type '{{ ' in .vue file
    web-mode-enable-auto-pairing nil
    )
+
+  ;; Enable ANSI in buffer
   (add-hook 'compilation-filter-hook
             (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
+
   (require 'lsp-java-boot)
   (add-hook 'lsp-mode-hook #'lsp-lens-mode)
   (add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
+
+  ;; custom projectile compile command for spring boot
+  (projectile-register-project-type 'maven '("pom.xml")
+                                    :project-file "pom.xml"
+                                    :compile "mvn spring-boot:run"
+                                    :test "mvn -B test"
+                                    :test-suffix "Test"
+                                    :src-dir "main/src/"
+                                    :test-dir "main/test/")
   )
 
 
