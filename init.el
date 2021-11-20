@@ -94,8 +94,9 @@ This function should only modify configuration layer settings."
                             "-XX:GCTimeRatio=4"
                             "-XX:AdaptiveSizePolicyWeight=90"
                             "-Dsun.zip.disableMemoryMapping=true"
-                            "-Xmx3G"
-                            "-Xms1G"
+                            ;; heap size
+                            "-Xmx2G"
+                            "-Xms100m"
                             ;; lombok
                             "-javaagent:/home/k/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar"))
      (lsp :variables
