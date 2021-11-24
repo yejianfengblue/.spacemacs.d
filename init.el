@@ -105,43 +105,27 @@ This function should only modify configuration layer settings."
                             ;; lombok
                             "-javaagent:/home/k/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar"))
      (lsp :variables
-          ;; Formatting and indentation - use Cider instead
-          ;; lsp-enable-on-type-formatting t
-          ;; Set to nil to use CIDER features instead of LSP UI
-          ;; lsp-enable-indentation t
-          ;; lsp-enable-snippet t  ;; to test again
-
-          ;; symbol highlighting - `lsp-toggle-symbol-highlight` toggles highlighting
-          ;; subtle highlighting for doom-gruvbox-light theme defined in dotspacemacs/user-config
-          ;; lsp-enable-symbol-highlighting t
-
-          ;; Show lint error indicator in the mode line
+          lsp-enable-on-type-formatting t
+          lsp-enable-indentation nil
+          lsp-enable-snippet t
 
           lsp-modeline-code-actions-enable nil
+          lsp-diagnostic-clean-after-change t
 
           lsp-restart 'auto-restart
 
           ;; popup documentation boxes
           lsp-ui-doc-enable t          ;; disable all doc popups
-          ;; lsp-ui-doc-show-with-mouse t   ;; doc popup for mouse
-          ;; lsp-ui-doc-show-with-cursor t
-          ;; lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
+          lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
           lsp-ui-doc-include-signature t    ;; include function signature
-          ;; lsp-ui-doc-position 'at-point  ;; top bottom at-point
-          ;; lsp-ui-doc-alignment 'window      ;; frame window
+          lsp-ui-doc-position 'at-point ;; top bottom at-point
+          lsp-ui-doc-alignment 'window      ;; frame window
 
           ;; code actions and diagnostics text as right-hand side of buffer
-          ;; lsp-ui-sideline-enable t
-          lsp-ui-sideline-show-code-actions nil
-          ;; lsp-ui-sideline-delay 500
-
+          lsp-ui-sideline-enable t
           ;; lsp-ui-sideline-show-diagnostics nil
-
-          ;; reference count for functions (assume their maybe other lenses in future)
-          ;; lsp-lens-enable t
-
-          ;; Efficient use of space in treemacs-lsp display
-          ;; treemacs-space-between-root-nodes nil
+          ;; lsp-ui-sideline-show-code-actions nil
+          lsp-ui-sideline-delay 1
 
           ;; Optimization for large files
           ;; lsp-file-watch-threshold 10000
