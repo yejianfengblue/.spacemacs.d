@@ -80,7 +80,9 @@ This function should only modify configuration layer settings."
                  typescript-indent-level 2
                  )
      (vue :variables
-          vue-backend 'lsp)
+          vue-backend 'lsp
+          lsp-vetur-completion-scaffold-snippet-sources '((workspace . "(W)") (user . "(U)") (vetur . ""))
+          )
      (java :variables
            c-basic-offset 4
            lsp-java-completion-favorite-static-members  ["org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*" "java.util.stream.Collectors.*" "org.junit.Assert.*" "org.junit.Assume.*" "org.junit.jupiter.api.Assertions.*" "org.junit.jupiter.api.Assumptions.*" "org.junit.jupiter.api.DynamicContainer.*" "org.junit.jupiter.api.DynamicTest.*" "org.mockito.Mockito.*" "org.mockito.ArgumentMatchers.*" "org.mockito.Answers.*" "org.assertj.core.api.Assertions.*"]
