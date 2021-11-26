@@ -145,7 +145,8 @@ This function should only modify configuration layer settings."
      version-control
      themes-megapack
      treemacs
-     yaml)
+     (yaml :variables
+           yaml-enable-lsp t))
 
 
    ;; List of additional packages that will be installed without being wrapped
