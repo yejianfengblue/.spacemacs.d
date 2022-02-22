@@ -132,10 +132,12 @@ This function should only modify configuration layer settings."
           ;; lsp-log-io nil)
           )
      dap
+     major-modes
      markdown
      multiple-cursors
      (org :variables
           org-image-actual-width 500)
+     python
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
