@@ -63,7 +63,9 @@ This function should only modify configuration layer settings."
      colors
      emacs-lisp
      (git :variables
-          git-enable-magit-gitflow-plugin t)
+          git-enable-magit-gitflow-plugin t
+          git-magit-status-fullscreen t
+          magit-revision-show-gravatars nil)
      helm
      (html :variables
            web-fmt-tool 'prettier)
