@@ -91,7 +91,7 @@ This function should only modify configuration layer settings."
            lsp-java-completion-favorite-static-members  ["org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*" "java.util.stream.Collectors.*" "org.junit.Assert.*" "org.junit.Assume.*" "org.junit.jupiter.api.Assertions.*" "org.junit.jupiter.api.Assumptions.*" "org.junit.jupiter.api.DynamicContainer.*" "org.junit.jupiter.api.DynamicTest.*" "org.mockito.Mockito.*" "org.mockito.ArgumentMatchers.*" "org.mockito.Answers.*" "org.assertj.core.api.Assertions.*"]
            lsp-java-completion-filtered-types ["java.awt.*" "com.sun.*" "jdk.*" "sun.*"]
            ;; lsp-java-java-path "/lib/jvm/java-17-jdk/bin/java"
-           lsp-java-jdt-download-url "https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/milestones/1.5.0/jdt-language-server-1.5.0-202110191539.tar.gz"
+           lsp-java-jdt-download-url "https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz"
            lsp-java-format-settings-url "/home/k/projects/eclipse-formatter-blue.xml"
            lsp-java-maven-download-sources t
            lsp-java-save-actions-organize-imports t
