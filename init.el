@@ -145,7 +145,8 @@ This function should only modify configuration layer settings."
           org-enable-sticky-header t
           org-sticky-header-full-path full
           org-image-actual-width 500)
-     python
+     (python :variables
+             python-backend 'lsp python-lsp-server 'pyright)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
