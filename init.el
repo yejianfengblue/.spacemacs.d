@@ -142,6 +142,8 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
+          org-enable-sticky-header t
+          org-sticky-header-full-path full
           org-image-actual-width 500)
      python
      (shell :variables
