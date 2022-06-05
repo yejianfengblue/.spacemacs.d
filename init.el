@@ -676,6 +676,12 @@ before packages are loaded."
   ;; (if (display-graphic-p)
   (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
   ;; )
+
+
+  (global-unset-key (kbd "<f11>"))
+  ;; (global-set-key (kbd "<f11>") nil)
+  ;; (define-key global-map (kbd "<f11>") nil)
+
   (setq-default
    ;; web-mode
    web-mode-markup-indent-offset 2
