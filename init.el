@@ -98,7 +98,7 @@ This function should only modify configuration layer settings."
            lsp-java-sources-organize-imports-star-threshold 5
            lsp-java-sources-organize-imports-static-star-threshold 5
            ;; immediate code completion after press
-           ;; company-minimum-prefix-length 1
+           ;; company-minimum-prefix-length 0
            lsp-java-vmargs (list
                             ;; default values
                             "-XX:+UseParallelGC"
@@ -125,7 +125,7 @@ This function should only modify configuration layer settings."
           lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
           lsp-ui-doc-include-signature t    ;; include function signature
           lsp-ui-doc-position 'at-point ;; top bottom at-point
-          lsp-ui-doc-alignment 'window      ;; frame window
+          lsp-ui-doc-alignment 'frame      ;; frame window
 
           ;; code actions and diagnostics text as right-hand side of buffer
           lsp-ui-sideline-enable t
@@ -689,10 +689,10 @@ before packages are loaded."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
    ;; do not conflict with smartparens when type '{{ ' in .vue file
-   web-mode-enable-auto-pairing nil
+   ;; web-mode-enable-auto-pairing nil
    )
 
-  ;; Enable ANSI in buffer
+   ; Enable ANSI in buffer
   (add-hook 'compilation-filter-hook
             (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
 
@@ -708,6 +708,7 @@ before packages are loaded."
                                     :test-suffix "Test"
                                     :src-dir "main/src/"
                                     :test-dir "main/test/")
+  (with-eval-after-load 'org)
   )
 
 
