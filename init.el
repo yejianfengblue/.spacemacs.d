@@ -143,7 +143,7 @@ This function should only modify configuration layer settings."
      multiple-cursors
      (org :variables
           org-enable-sticky-header t
-          org-sticky-header-full-path full
+          org-sticky-header-full-path 'full
           org-image-actual-width 500)
      (python :variables
              python-backend 'lsp python-lsp-server 'pyright)
