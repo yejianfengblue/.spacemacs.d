@@ -144,7 +144,14 @@ This function should only modify configuration layer settings."
      (org :variables
           org-enable-sticky-header t
           org-sticky-header-full-path 'full
+          org-enable-roam-support t
+          org-enable-roam-protocol t
+          org-enable-roam-server t
+          org-roam-directory "~/MEGA/org-roam/"
+          ;; org-roam-v2-ack t
+          org-enable-appear-support t
           org-image-actual-width 500)
+     (plantuml :variables plantuml-jar-path "~/MEGA/plantuml-1.2022.4.jar" org-plantuml-jar-path "~/MEGA/plantuml-1.2022.4.jar")
      (python :variables
              python-backend 'lsp python-lsp-server 'pyright)
      (shell :variables
