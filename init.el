@@ -652,7 +652,11 @@ See the header of this file for more information."
 This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
-If you are unsure, try setting them in `dotspacemacs/user-config' first.")
+If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  ;; (add-to-list 'default-frame-alist
+               ;; '(font . "-ADBE-Source Code Pro-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1"))
+      ;; (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
+)
 
 
 (defun dotspacemacs/user-load ()
@@ -669,7 +673,9 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (spacemacs//set-monospaced-font "JetBrains Mono" "WenQuanYi Micro Hei Mono" 14 16)
+  ;; (if (display-graphic-p)
+  (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
+  ;; )
   (setq-default
    ;; web-mode
    web-mode-markup-indent-offset 2
