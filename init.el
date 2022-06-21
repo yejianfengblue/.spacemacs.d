@@ -644,6 +644,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (spacemacs//set-monospaced-font "JetBrains Mono" "WenQuanYi Micro Hei Mono" 14 16)
   (setq-default
+   evil-escape-key-sequence "jk"
+   evil-escape-delay 0.5
    ;; web-mode
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
