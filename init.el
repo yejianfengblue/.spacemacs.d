@@ -91,14 +91,14 @@ This function should only modify configuration layer settings."
            lsp-java-completion-favorite-static-members  ["org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*" "java.util.stream.Collectors.*" "org.junit.Assert.*" "org.junit.Assume.*" "org.junit.jupiter.api.Assertions.*" "org.junit.jupiter.api.Assumptions.*" "org.junit.jupiter.api.DynamicContainer.*" "org.junit.jupiter.api.DynamicTest.*" "org.mockito.Mockito.*" "org.mockito.ArgumentMatchers.*" "org.mockito.Answers.*" "org.assertj.core.api.Assertions.*"]
            lsp-java-completion-filtered-types ["java.awt.*" "com.sun.*" "jdk.*" "sun.*"]
            ;; lsp-java-java-path "/lib/jvm/java-17-jdk/bin/java"
-           lsp-java-jdt-download-url "https://mirrors.tuna.tsinghua.edu.cn/eclipse/jdtls/milestones/1.5.0/jdt-language-server-1.5.0-202110191539.tar.gz"
+           lsp-java-jdt-download-url "https://download.eclipse.org/jdtls/milestones/1.9.0/jdt-language-server-1.9.0-202203031534.tar.gz"
            lsp-java-format-settings-url "/home/k/projects/eclipse-formatter-blue.xml"
            lsp-java-maven-download-sources t
            lsp-java-save-actions-organize-imports t
            lsp-java-sources-organize-imports-star-threshold 5
            lsp-java-sources-organize-imports-static-star-threshold 5
            ;; immediate code completion after press
-           ;; company-minimum-prefix-length 1
+           ;; company-minimum-prefix-length 0
            lsp-java-vmargs (list
                             ;; default values
                             "-XX:+UseParallelGC"
@@ -125,7 +125,7 @@ This function should only modify configuration layer settings."
           lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
           lsp-ui-doc-include-signature t    ;; include function signature
           lsp-ui-doc-position 'at-point ;; top bottom at-point
-          lsp-ui-doc-alignment 'window      ;; frame window
+          lsp-ui-doc-alignment 'frame      ;; frame window
 
           ;; code actions and diagnostics text as right-hand side of buffer
           lsp-ui-sideline-enable t
@@ -142,8 +142,18 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
+          org-enable-sticky-header t
+          org-sticky-header-full-path 'full
+          org-enable-roam-support t
+          org-enable-roam-protocol t
+          org-enable-roam-server t
+          org-roam-directory "~/MEGA/org-roam/"
+          ;; org-roam-v2-ack t
+          org-enable-appear-support t
           org-image-actual-width 500)
-     python
+     (plantuml :variables plantuml-jar-path "~/MEGA/plantuml-1.2022.4.jar" org-plantuml-jar-path "~/MEGA/plantuml-1.2022.4.jar")
+     (python :variables
+             python-backend 'lsp python-lsp-server 'pyright)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -190,9 +200,13 @@ It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
-   ;; If non-nil then enable support for the portable dumper. You'll need
-   ;; to compile Emacs 27 from source following the instructions in file
+   ;; If non-nil then enable support for the portable dumper. You'll need to
+   ;; compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
+   ;;
+   ;; WARNING: pdumper does not work with Native Compilation, so it's disabled
+   ;; regardless of the following setting when native compilation is in effect.
+   ;;
    ;; (default nil)
    dotspacemacs-enable-emacs-pdumper nil
 
@@ -297,8 +311,16 @@ It should only modify the values of Spacemacs settings."
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
+   ;; Show numbers before the startup list lines. (default t)
+   dotspacemacs-show-startup-list-numbers t
+
    ;; The minimum delay in seconds between number key presses. (default 0.4)
    dotspacemacs-startup-buffer-multi-digit-delay 0.4
+
+   ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
+   ;; This has no effect in terminal or if "all-the-icons" package or the font
+   ;; is not installed. (default nil)
+   dotspacemacs-startup-buffer-show-icons nil
 
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
@@ -488,8 +510,8 @@ It should only modify the values of Spacemacs settings."
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
    ;; `prog-mode' and `text-mode' derivatives. If set to `relative', line
    ;; numbers are relative. If set to `visual', line numbers are also relative,
-   ;; but lines are only visual lines are counted. For example, folded lines
-   ;; will not be counted and wrapped lines are counted as multiple lines.
+   ;; but only visual lines are counted. For example, folded lines will not be
+   ;; counted and wrapped lines are counted as multiple lines.
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
    ;;   :visual nil
@@ -583,12 +605,15 @@ It should only modify the values of Spacemacs settings."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'changed
 
-   ;; If non nil activate `clean-aindent-mode' which tries to correct
-   ;; virtual indentation of simple modes. This can interfer with mode specific
+   ;; If non-nil activate `clean-aindent-mode' which tries to correct
+   ;; virtual indentation of simple modes. This can interfere with mode specific
    ;; indent handling like has been reported for `go-mode'.
    ;; If it does deactivate it here.
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
+
+   ;; Accept SPC as y for prompts if non-nil. (default nil)
+   dotspacemacs-use-SPC-as-y nil
 
    ;; If non-nil shift your number row to match the entered keyboard layout
    ;; (only in insert state). Currently supported keyboard layouts are:
@@ -607,7 +632,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-pretty-docs nil
 
    ;; If nil the home buffer shows the full path of agenda items
-   ;; and todos. If non nil only the file name is shown.
+   ;; and todos. If non-nil only the file name is shown.
    dotspacemacs-home-shorten-agenda-source nil
 
    ;; If non-nil then byte-compile some of Spacemacs files.
@@ -619,21 +644,27 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+  (spacemacs/load-spacemacs-env)
+)
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
 This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
-If you are unsure, try setting them in `dotspacemacs/user-config' first.")
+If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  ;; (add-to-list 'default-frame-alist
+               ;; '(font . "-ADBE-Source Code Pro-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1"))
+      ;; (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
+)
 
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump.")
+dump."
+)
 
 
 (defun dotspacemacs/user-config ()
@@ -642,7 +673,15 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (spacemacs//set-monospaced-font "JetBrains Mono" "WenQuanYi Micro Hei Mono" 14 16)
+  ;; (if (display-graphic-p)
+  (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
+  ;; )
+
+
+  (global-unset-key (kbd "<f11>"))
+  ;; (global-set-key (kbd "<f11>") nil)
+  ;; (define-key global-map (kbd "<f11>") nil)
+
   (setq-default
    evil-escape-key-sequence "jk"
    evil-escape-delay 0.5
@@ -652,10 +691,10 @@ before packages are loaded."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2
    ;; do not conflict with smartparens when type '{{ ' in .vue file
-   web-mode-enable-auto-pairing nil
+   ;; web-mode-enable-auto-pairing nil
    )
 
-  ;; Enable ANSI in buffer
+   ; Enable ANSI in buffer
   (add-hook 'compilation-filter-hook
             (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
 
@@ -671,6 +710,7 @@ before packages are loaded."
                                     :test-suffix "Test"
                                     :src-dir "main/src/"
                                     :test-dir "main/test/")
+  (with-eval-after-load 'org)
   )
 
 
