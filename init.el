@@ -40,7 +40,8 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      (auto-completion :variables
                       auto-completion-tab-key-behavior 'complete
-                      auto-completion-enable-snippets-in-popup t)
+                      auto-completion-enable-snippets-in-popup t
+                      :disabled-for org spacemacs-org)
      command-log
      ;; better-defaults
      (chinese :variables
@@ -142,6 +143,7 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
+          org-src-tab-acts-natively nil
           org-enable-sticky-header t
           org-sticky-header-full-path 'full
           org-enable-roam-support t
