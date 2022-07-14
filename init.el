@@ -685,8 +685,8 @@ before packages are loaded."
   ;; (define-key global-map (kbd "<f11>") nil)
 
   (setq-default
-   evil-escape-key-sequence "jk"
-   evil-escape-delay 0.5
+   ;; evil-escape-key-sequence "jk"
+   ;; evil-escape-delay 0.5
    ;; web-mode
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
