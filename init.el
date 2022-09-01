@@ -99,7 +99,6 @@ This function should only modify configuration layer settings."
            lsp-java-sources-organize-imports-star-threshold 5
            lsp-java-sources-organize-imports-static-star-threshold 5
            ;; immediate code completion after press
-           ;; company-minimum-prefix-length 0
            lsp-java-vmargs (list
                             ;; default values
                             "-XX:+UseParallelGC"
@@ -111,6 +110,7 @@ This function should only modify configuration layer settings."
                             "-Xms100m"
                             ;; lombok
                             "-javaagent:/home/k/.m2/repository/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar"))
+           company-minimum-prefix-length 1
      (lsp :variables
           lsp-enable-on-type-formatting t
           lsp-enable-indentation nil
