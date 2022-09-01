@@ -699,6 +699,11 @@ before packages are loaded."
    ;; web-mode-enable-auto-pairing nil
    )
 
+  ;; evil behavior
+  (setq-default
+   evil-ex-substitute-global t
+   )
+
    ; Enable ANSI in buffer
   (add-hook 'compilation-filter-hook
             (lambda () (ansi-color-apply-on-region (point-min) (point-max))))
