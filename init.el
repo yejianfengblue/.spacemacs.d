@@ -116,26 +116,28 @@ This function should only modify configuration layer settings."
           lsp-enable-snippet t
 
           lsp-modeline-code-actions-enable nil
+          lsp-modeline-diagnostics-enable t
           lsp-diagnostic-clean-after-change t
 
           lsp-restart 'auto-restart
 
           ;; popup documentation boxes
-          lsp-ui-doc-enable t          ;; disable all doc popups
+          lsp-ui-doc-enable nil          ;; disable all doc popups
           lsp-ui-doc-delay 2                ;; delay in seconds for popup to display
-          lsp-ui-doc-include-signature t    ;; include function signature
+          lsp-ui-doc-include-signature nil    ;; include function signature
           lsp-ui-doc-position 'at-point ;; top bottom at-point
-          lsp-ui-doc-alignment 'frame      ;; frame window
+          lsp-ui-doc-alignment 'window      ;; frame window
 
           ;; code actions and diagnostics text as right-hand side of buffer
-          lsp-ui-sideline-enable t
-          ;; lsp-ui-sideline-show-diagnostics nil
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-diagnostics nil
           ;; lsp-ui-sideline-show-code-actions nil
-          lsp-ui-sideline-delay 1
+          ;; lsp-ui-sideline-delay 1
 
           ;; Optimization for large files
           ;; lsp-file-watch-threshold 10000
           ;; lsp-log-io nil)
+          lsp-signature-doc-lines 5
           )
      dap
      major-modes
