@@ -153,6 +153,7 @@ This function should only modify configuration layer settings."
                                      (shell . t)
                                      (sql . t)
                                      )
+          org-image-actual-width (list 500 400 300 200 100))
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
