@@ -713,6 +713,11 @@ before packages are loaded."
   (require 'lsp-java-boot)
   (add-hook 'lsp-mode-hook #'lsp-lens-mode)
   (add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
+  ;; Make sure the following comes before `(fcitx-aggressive-setup)'
+  (setq fcitx-active-evil-states '(insert emacs hybrid)) ; if you use hybrid mode
+  (fcitx-aggressive-setup)
+  (fcitx-prefix-keys-add "M-m") ; M-m is common in Spacemacs
+  (setq fcitx-use-dbus t) ; uncomment if you're using Linux
 
   ;; custom projectile compile command for spring boot
   (projectile-register-project-type 'maven '("pom.xml")
