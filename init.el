@@ -160,7 +160,7 @@ This function should only modify configuration layer settings."
             shell-default-term-shell "/usr/bin/zsh"
             shell-default-shell 'shell
             )
-     spell-checking
+     ;; spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil)
      version-control
