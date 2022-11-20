@@ -145,8 +145,6 @@ This function should only modify configuration layer settings."
           org-enable-appear-support t
           org-image-actual-width 500)
      (plantuml :variables plantuml-jar-path "~/mega/plantuml-1.2022.4.jar" org-plantuml-jar-path "~/mega/plantuml-1.2022.4.jar")
-     (python :variables
-             python-backend 'lsp python-lsp-server 'pyright)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
