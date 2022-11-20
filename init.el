@@ -156,7 +156,10 @@ This function should only modify configuration layer settings."
      (plantuml :variables plantuml-jar-path "/file/mega/plantuml-1.2022.4.jar" org-plantuml-jar-path "/file/mega/plantuml-1.2022.4.jar")
      (shell :variables
             shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-position 'bottom
+            shell-default-term-shell "/usr/bin/zsh"
+            shell-default-shell 'shell
+            )
      spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-tooltips nil)
