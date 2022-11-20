@@ -658,7 +658,6 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; (add-to-list 'default-frame-alist
                ;; '(font . "-ADBE-Source Code Pro-normal-normal-normal-*-13-*-*-*-m-0-iso10646-1"))
-      ;; (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
 )
 
 
@@ -677,7 +676,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; (if (display-graphic-p)
-  (spacemacs//set-monospaced-font "JetBrains Mono" "文泉驿微米黑" 14 16)
+  (spacemacs//set-monospaced-font "MesloLGS NF" "文泉驿微米黑" 18 22)
   ;; )
 
 
