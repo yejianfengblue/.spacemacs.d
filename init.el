@@ -104,6 +104,7 @@ This function should only modify configuration layer settings."
           lsp-enable-snippet t
 
           lsp-modeline-code-actions-enable nil
+          lsp-modeline-diagnostics-enable t
           lsp-diagnostic-clean-after-change t
 
           lsp-restart 'auto-restart
