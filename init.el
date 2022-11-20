@@ -720,9 +720,9 @@ before packages are loaded."
                                     :compile "mvn spring-boot:run"
                                     :test "mvn -B test"
                                     :test-suffix "Test"
-                                    :src-dir "main/src/"
-                                    :test-dir "main/test/")
   (with-eval-after-load 'org)
+                                    :src-dir "src/main/"
+                                    :test-dir "src/test/")
   )
 
 
