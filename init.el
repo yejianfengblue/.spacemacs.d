@@ -130,6 +130,8 @@ This function should only modify configuration layer settings."
      dap
      major-modes
      markdown
+     (mermaid :variables
+              ob-mermaid-cli-path "/file/npm-global/bin/mmdc")
      multiple-cursors
      (org :variables
           org-src-tab-acts-natively nil
