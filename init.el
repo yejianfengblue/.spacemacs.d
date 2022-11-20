@@ -684,6 +684,10 @@ before packages are loaded."
   (global-unset-key (kbd "<f11>"))
   ;; (global-set-key (kbd "<f11>") nil)
   ;; (define-key global-map (kbd "<f11>") nil)
+  ;;; esc always quits
+  ;; translate trade-off it all esc in key binding sequence are translated to c-g
+  (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+  ;; (global-set-key [escape] 'keyboard-quit)
 
   (setq-default
    ;; evil-escape-key-sequence "jk"
