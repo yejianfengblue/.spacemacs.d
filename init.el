@@ -137,7 +137,7 @@ This function should only modify configuration layer settings."
           org-enable-roam-support t
           org-enable-roam-protocol t
           org-enable-roam-server t
-          org-roam-directory "~/mega/org-roam/"
+          org-roam-directory "/file/mega/org-roam/"
           ;; org-roam-v2-ack t
           org-enable-appear-support t
           org-image-actual-width 500)
