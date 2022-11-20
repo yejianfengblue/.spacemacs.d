@@ -680,6 +680,7 @@ before packages are loaded."
   (spacemacs/toggle-camel-case-motion-globally-on)
   ;; )
 
+  (setq terminal-here-linux-terminal-command 'alacritty)
 
   (global-unset-key (kbd "<f11>"))
   ;; (global-set-key (kbd "<f11>") nil)
