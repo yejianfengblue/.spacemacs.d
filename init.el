@@ -143,8 +143,16 @@ This function should only modify configuration layer settings."
           org-roam-directory "/file/mega/org-roam/"
           ;; org-roam-v2-ack t
           org-enable-appear-support t
-          org-image-actual-width 500)
      (plantuml :variables plantuml-jar-path "~/mega/plantuml-1.2022.4.jar" org-plantuml-jar-path "~/mega/plantuml-1.2022.4.jar")
+          org-babel-load-languages '(
+                                     (emacs-lisp . t)
+                                     (java . t)
+                                     (js . t)
+                                     (mermaid . t)
+                                     (python . t)
+                                     (shell . t)
+                                     (sql . t)
+                                     )
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
