@@ -125,6 +125,7 @@ This function should only modify configuration layer settings."
           ;; Optimization for large files
           ;; lsp-file-watch-threshold 10000
           ;; lsp-log-io nil)
+          lsp-signature-doc-lines 5
           )
      dap
      major-modes
