@@ -49,18 +49,6 @@ This function should only modify configuration layer settings."
               chinese-enable-fcitx t
               :packages
               (not pangu-spacing))
-     (clojure :variables
-              ;; clojure-backend 'cider               ;; use cider and disable lsp
-              ;; clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
-              cider-repl-display-help-banner nil      ;; disable help banner
-              cider-pprint-fn 'fipp                   ;; fast pretty printing
-              clojure-indent-style 'align-arguments
-              clojure-align-forms-automatically t
-              clojure-toplevel-inside-comment-form t  ;; evaluate expressions in comment as top level
-              cider-result-overlay-position 'at-point ;; results shown right after expression
-              cider-overlays-use-font-lock t
-              cider-repl-buffer-size-limit 100        ;; limit lines shown in REPL buffer
-              )
      colors
      emacs-lisp
      (git :variables
